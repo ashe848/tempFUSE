@@ -1,9 +1,3 @@
-'''
-Abby-Junyi Shen
-269481021
-ashe848
-'''
-
 #!/usr/bin/env python
 
 from __future__ import print_function, absolute_import, division
@@ -20,7 +14,7 @@ from errno import ENOENT
 from stat import S_IFDIR, S_IFREG
 from time import time
 
-class A2Fuse2(LoggingMixIn, Operations):
+class TempFuse(LoggingMixIn, Operations):
     def __init__(self, root):
         self.root = root
         self.files = {}
@@ -248,7 +242,7 @@ class A2Fuse2(LoggingMixIn, Operations):
             return len(data)
         
 def main(mountpoint, root):
-    FUSE(A2Fuse2(root), mountpoint, nothreads=True, foreground=True)
+    FUSE(TempFuse(root), mountpoint, nothreads=True, foreground=True)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
