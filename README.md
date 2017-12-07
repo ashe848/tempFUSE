@@ -9,7 +9,7 @@ Any changes which happen to files in the mount directory which have been created
 
 To run, start the user space file system in a terminal:
 
-python a2fuse2.py source mount
+python tempFuse.py source mount
 
 This terminal will show output that describes calls made to the file system and output gotten back in debug form.
 
